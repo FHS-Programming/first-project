@@ -1,25 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom'
+import Griffin from "./pages/Griffin"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <h1>Links</h1>
+        <li>
+          <a href ="/">Home </a> <br/>
+          <a href="/griffin">Griffin's Page</a>
+        </li>
+      </div>
+      <Route exact path="/griffin" component={Griffin}/>
+    </BrowserRouter>
   );
 }
 
